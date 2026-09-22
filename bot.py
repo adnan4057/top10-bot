@@ -84,7 +84,7 @@ def get_top_n_symbols(exclude=None, n=TOP_N):
         if len(result) >= n:
             break
     return result
-  def market_buy(symbol, usdt_amount):
+def market_buy(symbol, usdt_amount):
     try:
         order = call_with_retry(exchange.create_market_buy_order, symbol, None, params={"quoteOrderQty":usdt_amount})
         qty = float(order.get("filled",0))
