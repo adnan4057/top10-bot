@@ -46,7 +46,7 @@ def save_state(state):
     with open(tmp, "w") as f:
         json.dump(state, f, indent=4)
     os.replace(tmp, STATE_FILE)
-  def call_with_retry(func, *args, max_retries=3, base_delay=5, **kwargs):
+def call_with_retry(func, *args, max_retries=3, base_delay=5, **kwargs):
     last = None
     for i in range(1, max_retries + 1):
         try:
