@@ -114,7 +114,7 @@ def get_portfolio_value(state, tickers):
         if sym in tickers and tickers[sym].get("last"):
             total += pos["qty"]*tickers[sym]["last"]
     return total
-  def run_bot_cycle(state):
+def run_bot_cycle(state):
     tickers = call_with_retry(exchange.fetch_tickers)
     btc_price, is_bullish = get_btc_data_and_ma()
     usdt_cash = get_usdt_cash()
